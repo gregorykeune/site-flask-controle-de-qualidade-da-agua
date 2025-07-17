@@ -1,0 +1,163 @@
+/* styles.css - versão minimalista */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  color: #222;
+}
+
+/* Centralização vertical e horizontal */
+.vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fafafa;
+  padding: 20px;
+}
+
+/* Container da tabela */
+.container.view {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Título acima da tabela */
+.container.view p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Tabela estilizada */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+/* Cabeçalho */
+thead th {
+  background-color: #f0f0f0;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 700;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Linhas do corpo */
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Alternância de cores nas linhas */
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Hover nas linhas */
+tbody tr:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+
+/* Status ativo/desativado com cores */
+td.status {
+  font-weight: 600;
+}
+
+td.status.ativo {
+  color: #2a9d8f; /* verde azulado */
+}
+
+td.status.desativado {
+  color: #e76f51; /* vermelho queimado */
+}
+
+/* Links para editar e deletar */
+td a {
+  color: #264653;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+td a:hover {
+  color: #2a9d8f;
+}
+
+/* Botões de formulário */
+form p input[type="submit"] {
+  background-color: #264653;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+form p input[type="submit"]:hover {
+  background-color: #2a9d8f;
+}
+
+/* Container do botão retornar alinhado */
+form[action$="home"] p input[type="submit"] {
+  background-color: #e76f51;
+}
+
+form[action$="home"] p input[type="submit"]:hover {
+  background-color: #f4a261;
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+  .container.view {
+    padding: 15px 20px;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    background: white;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #666;
+    flex-basis: 50%;
+  }
+}

@@ -1,0 +1,79 @@
+/* Aplica estilos apenas dentro do wrapper de edição */
+.edit-wrapper {
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  padding: 20px;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Título */
+.edit-wrapper h1 {
+  text-align: center;
+  padding: 20px 0;
+  color: #2f3640;
+}
+
+/* Formulário */
+.edit-wrapper form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.edit-wrapper input,
+.edit-wrapper select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.edit-wrapper input[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.edit-wrapper input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.edit-wrapper label {
+  margin-left: 5px;
+}
+
+.edit-wrapper button,
+.edit-wrapper input[type="submit"] {
+  width: 100%;
+  background-color: #0984e3;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.edit-wrapper button:hover,
+.edit-wrapper input[type="submit"]:hover {
+  background-color: #74b9ff;
+}
+
+/* Mensagens */
+.edit-wrapper ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.edit-wrapper ul li {
+  background-color: #dff9fb;
+  color: #130f40;
+  padding: 10px;
+  margin: 10px aut
+}

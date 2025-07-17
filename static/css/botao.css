@@ -1,0 +1,9 @@
+input[type="submit"] {
+    background-color: blue;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    width: 160px;
+    height: 28px;
+    cursor: pointer;
+}
