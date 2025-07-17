@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for key, value in values.items() %}
+
+{% if key == 'salinidade' %}
+<div class="card border-left-primary shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">{{ key }}</h6>
+    </div>
+    <div class="card-body">
+        Valor do Sensor de Salinidade:
+        <br>
+        <td>{{ value }} ppt</td>
+        {% elif key == 'ph' %}
+        <div class="card border-left-success shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-success">{{ key }}</h6>
+            </div>
+            <div class="card-body">
+                Valor do Sensor de pH:
+                <br>
+                <td>{{ value }} pH</td>
+                {% elif key == 'ph_angulo' %}
+                <div class="card border-left-warning shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-warning">{{ key }}</h6>
+                    </div>
+                    <div class="card-body">
+                        Ângulo do motor de regulagem de pH:
+                        <br>
+                        <td>{{ value }} °</td>
+                        {% elif key == 'sal_angulo' %}
+                        <div class="card border-left-info shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-info">{{ key }}</h6>
+                            </div>
+                            <div class="card-body">
+                                Ângulo do motor de regulagem de salinidade:
+                                <br>
+                                <td>{{ value }} °</td>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% endblock %}

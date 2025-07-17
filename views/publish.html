@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+{% block title %}<title>Enviar comando</title>{% endblock %}
+
+<div class="vertical-center">
+    <div class="container-reg">
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Enviar comando</h6>
+            </div>
+
+                <div class="card-body">
+  
+                <form action="{{ url_for('publish_message') }}" method="post">
+                  <div class="form-group">
+                    <label for="topic">Tópico:</label>
+                    <select class="form-control" name="topic" id="topic" required>
+                        <option value="aquario/modo">aquario/modo</option>
+                        <option value="aquario/ph/servoph">aquario/ph/servoph</option>
+                        <option value="aquario/sal/servosal">aquario/sal/servosal</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <input class="form-control" type="text" name="message" placeholder="Digite a mensagem ou valor">
+                  </div>
+                  <button type="submit"  class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                    <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Carregar</span>
+                  </button>
+                </form>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+
+          </div>   
+    </div>
+  </div>
+</div>
+{% endblock %}
+

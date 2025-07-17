@@ -1,0 +1,74 @@
+<!--register_sensor.html -->
+{% extends"base.html" %}
+{% block content%} 
+{% block title %}<title>Registrar Sensores</title>{% endblock %}
+
+<div class="vertical-center">
+    <div class="container-fluid">
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Registrar Sensores</h6>
+            </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Coluna esquerda (imagem) -->
+                         <div class ="col-lg-6 d-none d-lg-block p-5">
+                            <img src="../static/img/undraw_new-entries_xw4m.svg" alt="duplicar"
+                            height="auto"
+                            width="100%" />
+                        </div>
+                        <!-- Coluna direita (formulário) -->
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <form action="/add_sensor" method="post">
+                                    
+                                        <div class="form-group">
+                                            <label for="name" class="form-label">Nome do Sensor</label>
+                                            <input type="text" id="name" class="form-control" placeholder="Nome" name="name" required>
+                                        </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="brand" class="form-label">Marca do Sensor</label>
+                                        <input type="text" id="brand" class="form-control" placeholder="Marca" name="brand" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="model" class="form-label">Modelo do Sensor</label>
+                                        <input type="text" id="model" class="form-control" placeholder="Modelo" name="model" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="unit" class="form-label">Unidade de Medida</label>
+                                        <input type="text" id="unit" class="form-control" placeholder="Unidade" name="unit" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="topic" class="form-label">Tópico MQTT</label>
+                                        <input type="text" id="topic" class="form-control" placeholder="Tópico" name="topic" required>
+                                    </div>
+
+                                    <div class="form-check mb-3" class="form-label">
+                                        <input class="form-check-input" type="checkbox" name="is_active" id="is_active" checked>
+                                        <label class="form-check-label" for="is_active">Ativo?</label>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                        <i class="fas fa-microchip"></i>
+                                        </span>
+                                        <span class="text">Registrar sensor</span>
+                                    </button>
+
+                                    
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
